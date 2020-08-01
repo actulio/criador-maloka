@@ -1,0 +1,18 @@
+<div
+  style.border-radius="{{ 2 * borderRadius }}px"
+  style.font-size=" {{ 15 * fontSize }}px "
+  class="container"
+>
+  <div class="content">
+    <div class="header">
+      <div class="avatar"></div>
+      <div class="user-info">
+        <div>nome da pessoa</div>
+        <div>@dapessoa</div>
+      </div>
+    </div>
+    <div class="body">
+      {{ !text.length ? 'Sua frase aparecerá aqui.' : text }}
+    </div>
+  </div>
+</div>

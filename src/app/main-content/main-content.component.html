@@ -1,0 +1,111 @@
+<div class="container">
+  <div
+    class="tweet-container"
+    [style.justify-content]="groupButton.value"
+    [style.background-image]="imageUrl"
+  >
+    <tweet
+      [borderRadius]="sliderBorderRadius.value"
+      [fontSize]="sliderFontSize.value"
+      [text]="textArea.value"
+      [profileImage]="imageUrl"
+    ></tweet>
+  </div>
+  <div class="tweet-controls-container">
+    <div class="text-controls">
+      <button
+        matTooltip="Adicionar texto"
+        matTooltipPosition="above"
+        mat-button
+        (click)="textArea.focus()"
+      >
+        <mat-icon>format_quote</mat-icon>
+      </button>
+
+      <mat-button-toggle-group #groupButton="matButtonToggleGroup">
+        <mat-button-toggle
+          matTooltip="Alinhar à esquerda"
+          matTooltipPosition="above"
+          value="flex-start"
+          aria-label="Alinhamento à esquerda"
+        >
+          <mat-icon>vertical_align_top</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle
+          matTooltip="Alinhar no centro"
+          matTooltipPosition="above"
+          value="center"
+          aria-label="Alinhamento ao centro"
+        >
+          <mat-icon>vertical_align_center</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle
+          matTooltip="Alinhar à direita"
+          matTooltipPosition="above"
+          value="flex-end"
+          aria-label="Alinhamento à direita"
+        >
+          <mat-icon>vertical_align_bottom</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <!-- <div class="example-selected-value">
+        Selected value: {{ groupButton.value }}
+      </div> -->
+      <input
+        style="display: none;"
+        type="file"
+        (change)="onFileChanged($event)"
+        #fileInput
+      />
+      <button
+        matTooltip="Adicionar imagem de fundo"
+        matTooltipPosition="above"
+        mat-button
+        (click)="fileInput.click()"
+      >
+        <mat-icon>insert_photo</mat-icon>
+      </button>
+    </div>
+    <div class="slider-controls">
+      <div>
+        Tamanho do Texto:
+        <mat-slider
+          #sliderFontSize
+          color="primary"
+          min="1"
+          max="1.4"
+          step="0.1"
+          value="1"
+        ></mat-slider>
+      </div>
+      <div>
+        Arrendodamento das Bordas:
+        <mat-slider
+          #sliderBorderRadius
+          color="primary"
+          min="0"
+          max="10"
+          step="2"
+          value="2"
+        ></mat-slider>
+      </div>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Adicionar frase</mat-label>
+      <textarea
+        #textArea
+        matInput
+        rows="3"
+        maxlength="180"
+        placeholder="Digite sua frase..."
+      ></textarea>
+    </mat-form-field>
+
+    <div class="save-button">
+      <button mat-stroked-button color="primary">Salvar</button>
+      <!-- <button mat-raised-button color="primary">Salvar</button> -->
+    </div>
+  </div>
+</div>
