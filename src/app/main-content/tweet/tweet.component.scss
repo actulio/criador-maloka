@@ -1,7 +1,9 @@
 .container {
   background-color: rgba(255, 255, 255, 0.9);
-  width: 400px;
+  min-width: max(200px, 85%);
   min-height: 100px;
+  margin: 2rem;
+  // display: flex;
 }
 .content {
   display: flex;
@@ -17,8 +19,8 @@
   .avatar {
     flex-shrink: 0;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     top: 0;
     left: 0;
     background: yellow;
@@ -30,11 +32,12 @@
     justify-content: space-around;
     margin-left: 1rem;
     div:first-child {
-      font-size: 16px;
+      font-size: 24px;
       font-weight: bold;
+      margin-bottom: 0.5rem;
     }
     div:last-child {
-      font-size: 14px;
+      font-size: 16px;
       color: grey;
     }
   }

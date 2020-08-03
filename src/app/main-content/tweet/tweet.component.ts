@@ -14,7 +14,6 @@ export class TweetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.fontSize, this.borderRadius)
   }
 
 }

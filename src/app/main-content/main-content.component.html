@@ -1,6 +1,8 @@
 <div class="container">
   <div
-    class="tweet-container"
+    id="divToPrint"
+    #divToPrint
+    class="image-container"
     [style.justify-content]="groupButton.value"
     [style.background-image]="imageUrl"
   >
@@ -9,8 +11,10 @@
       [fontSize]="sliderFontSize.value"
       [text]="textArea.value"
       [profileImage]="imageUrl"
+      class="tweet"
     ></tweet>
   </div>
+
   <div class="tweet-controls-container">
     <div class="text-controls">
       <button
@@ -49,9 +53,6 @@
           <mat-icon>vertical_align_bottom</mat-icon>
         </mat-button-toggle>
       </mat-button-toggle-group>
-      <!-- <div class="example-selected-value">
-        Selected value: {{ groupButton.value }}
-      </div> -->
       <input
         style="display: none;"
         type="file"
@@ -104,8 +105,15 @@
     </mat-form-field>
 
     <div class="save-button">
-      <button mat-stroked-button color="primary">Salvar</button>
-      <!-- <button mat-raised-button color="primary">Salvar</button> -->
+      <button (click)="downloadImage()" mat-raised-button color="primary">
+        Salvar
+      </button>
     </div>
   </div>
+
+  <!-- <div class="hidden-div">
+    <canvas width="1080" height="1080" class="canvas-class"> </canvas>
+    <img #canvas />
+    <a #downloadLink></a>
+  </div> -->
 </div>

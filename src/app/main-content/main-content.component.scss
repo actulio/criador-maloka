@@ -1,35 +1,57 @@
 .container {
   display: flex;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
+  height: 93vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.tweet-container {
+.image-container {
   background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(https://i.pinimg.com/originals/de/f6/96/def69643889ee29e232637646e839064.jpg);
+  background-size: cover;
+  background-image: url('../../assets/background.png');
 
-  min-width: 700px;
-  min-height: 600px;
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 770px;
+  max-height: 770px;
+  flex-grow: 1;
 
-  // width: 500px;
-  // height: 500px;
-  border: 1px solid black;
-  padding: 1rem;
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .tweet {
+    width: 100%;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0;
+  }
 }
 
 .tweet-controls-container {
+  margin: 2rem 1rem;
   padding: 1rem;
-  border: 1px solid black;
+  max-height: 300px;
+  max-width: 500px;
+  align-self: center;
+  flex-grow: 1;
+
+  @media (max-width: 450px) {
+    margin: 2rem 0;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
 
   .text-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
     .mat-button {
       margin: 0 1rem;
       width: 48px;
@@ -47,10 +69,9 @@
       align-items: center;
       justify-content: space-between;
     }
-  }
-
-  mat-form-field {
-    width: 100%;
+    .mat-slider {
+      width: 50%;
+    }
   }
   .save-button {
     text-align: right;
