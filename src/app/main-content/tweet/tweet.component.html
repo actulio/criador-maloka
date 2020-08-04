@@ -1,14 +1,14 @@
 <div
-  style.border-radius="{{ 2 * borderRadius }}px"
-  style.font-size=" {{ 15 * fontSize }}px "
+  style.border-radius="{{ borderRadius }}px"
+  style.font-size=" {{ fontSize }}px "
   class="container"
 >
-  <div class="content" id="content">
+  <div class="content" (click)="openDialog()">
     <div class="header">
-      <div class="avatar"></div>
+      <div class="avatar" [style.background-image]="userData.imgUrl"></div>
       <div class="user-info">
-        <div>nome da pessoa</div>
-        <div>@dapessoa</div>
+        <div>{{ userData.name }}</div>
+        <div>@{{ userData.userAt }}</div>
       </div>
     </div>
     <div class="body">

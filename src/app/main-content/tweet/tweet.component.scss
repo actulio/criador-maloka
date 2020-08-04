@@ -3,6 +3,7 @@
   min-width: max(200px, 85%);
   min-height: 100px;
   margin: 2rem;
+  cursor: pointer;
   // display: flex;
 }
 .content {
@@ -19,11 +20,13 @@
   .avatar {
     flex-shrink: 0;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     top: 0;
     left: 0;
-    background: yellow;
+    background-image: url('../../../assets/profile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .user-info {
     width: 100%;
@@ -32,12 +35,12 @@
     justify-content: space-around;
     margin-left: 1rem;
     div:first-child {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
     div:last-child {
-      font-size: 16px;
+      font-size: 14px;
       color: grey;
     }
   }

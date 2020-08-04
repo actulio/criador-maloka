@@ -9,7 +9,7 @@
 .image-container {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('../../assets/background.png');
+  background-image: url('../../assets/background.jpg');
 
   max-width: 770px;
   max-height: 770px;
@@ -26,7 +26,7 @@
     width: 100%;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     margin: 0;
   }
 }
@@ -75,5 +75,74 @@
   }
   .save-button {
     text-align: right;
+  }
+}
+
+// hidden-div related
+#hidden-div {
+  width: 1080px;
+  height: 1080px;
+  max-width: 1080px;
+  max-height: 1080px;
+  background-color: coral;
+  box-shadow: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  // z-index: -1;
+  display: none;
+
+  .tweet-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 1000px;
+    min-height: 200px;
+    display: flex;
+    margin: 2rem;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+  .avatar {
+    flex-shrink: 0;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/profile.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 1rem;
+    div:first-child {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    div:last-child {
+      font-size: 20px;
+      color: grey;
+    }
+  }
+
+  .tweet-body {
+    width: 100%;
   }
 }

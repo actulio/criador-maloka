@@ -1,0 +1,57 @@
+<!-- <h1 mat-dialog-title>Informações do Usuário</h1> -->
+<div mat-dialog-content>
+  <input
+    style="display: none;"
+    type="file"
+    (change)="onFileChanged($event)"
+    #fileInput
+  />
+  <div
+    class="img-container"
+    (click)="fileInput.click()"
+    [style.background-image]="userInfoForm.controls.imgUrl.value"
+  >
+    <div class="icon">
+      <mat-icon>add_a_photo</mat-icon>
+    </div>
+  </div>
+
+  <div class="form">
+    <form [formGroup]="userInfoForm">
+      <mat-form-field>
+        <mat-label>Nome</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          placeholder="Ex: Criador Maloka"
+        />
+        <mat-error *ngIf="userInfoForm.controls.name.hasError('required')">
+          Por favor, insira um nome.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Usuário</mat-label>
+        <input
+          matInput
+          formControlName="userAt"
+          placeholder="Ex: @criadormaloka"
+        />
+        <mat-error *ngIf="userInfoForm.controls.userAt.hasError('required')">
+          Por favor, insira um usuário.
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button
+    class="save-button"
+    mat-raised-button
+    color="primary"
+    [disabled]="!userInfoForm.valid"
+    (click)="onOkClick()"
+  >
+    Salvar
+  </button>
+</div>

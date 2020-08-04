@@ -1,16 +1,13 @@
 <div class="container">
   <div
-    id="divToPrint"
-    #divToPrint
     class="image-container"
     [style.justify-content]="groupButton.value"
     [style.background-image]="imageUrl"
   >
     <tweet
-      [borderRadius]="sliderBorderRadius.value"
-      [fontSize]="sliderFontSize.value"
+      [borderRadius]="sliderBorderRadius.value * 2"
+      [fontSize]="sliderFontSize.value * 15"
       [text]="textArea.value"
-      [profileImage]="imageUrl"
       class="tweet"
     ></tweet>
   </div>
@@ -110,10 +107,34 @@
       </button>
     </div>
   </div>
+</div>
 
-  <!-- <div class="hidden-div">
-    <canvas width="1080" height="1080" class="canvas-class"> </canvas>
-    <img #canvas />
-    <a #downloadLink></a>
-  </div> -->
+<!-- Hidden div -->
+<div
+  id="hidden-div"
+  #hiddenDiv
+  class="image-container"
+  [style.justify-content]="groupButton.value"
+  [style.background-image]="imageUrl"
+>
+  <div
+    style.border-radius="{{ 2 * sliderBorderRadius.value }}px"
+    style.font-size=" {{ 25 * sliderFontSize.value }}px "
+    class="tweet-container"
+  >
+    <div class="content">
+      <div class="header">
+        <div class="avatar" [style.background-image]="userData.imgUrl"></div>
+        <div class="user-info">
+          <div>{{ userData.name }}</div>
+          <div>{{ userData.userAt }}</div>
+        </div>
+      </div>
+      <div class="tweet-body">
+        {{
+          !textArea.value.length ? 'Sua frase aparecerá aqui.' : textArea.value
+        }}
+      </div>
+    </div>
+  </div>
 </div>
